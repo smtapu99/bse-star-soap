@@ -3,7 +3,8 @@ class ApplicationController < ActionController::API
   # https://github.com/savonrb/savon
   require 'savon'
 
-  include BseSettingsHelperHelper
+  include BseSettingsHelper
+  include ApplicationHelper
   include LogHelper
 
 end

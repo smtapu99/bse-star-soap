@@ -1,4 +1,0 @@
-module ApplicationHelperHelper
-
-
-end

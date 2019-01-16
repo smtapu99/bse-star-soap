@@ -1,4 +1,4 @@
-module BseSettingsHelperHelper
+module BseSettingsHelper
 =begin
   toggle for whether BSEStar's live API is being used or testing
   0 = testing; 1 = live
