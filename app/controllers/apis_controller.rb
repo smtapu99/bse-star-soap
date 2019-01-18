@@ -115,4 +115,76 @@ class ApisController < ApplicationController
       }.to_json
     end
   end
+
+  ## fire SOAP query to post the SIP order
+  def sip_order_entry_param
+    soap_header = generate_header('sipOrderEntryParam')
+
+    # create a client for the service
+    client = get_soap_client(soap_header)
+
+    #Must be calculated
+    # UniqueRefNo
+    # SchemeCode
+    # FirstOrderFlag
+    #
+    data = {
+        "TransactionCode" => params[:transanction_code].try(:upcase), #NEW/CXL, Order : New/Cancellation
+        "UniqueRefNo" => generate_trans_no(''), #trans_no is a unique number sent with every transaction creation request sent to BSE
+        "SchemeCode" => SecureRandom.hex,#BSE scheme code
+        "MemberCode" => params[:member_id],#Member code as given by BSE
+        "ClientCode" => params[:client_code],
+        "UserID" => params[:user_id],
+        "InternalRefNo" =>'', #Internal reference number
+        "TransMode" => params[:trans_mode],# D/P, demat or physica
+        "DpTxnMode" => params[:dptxn].try(:upcase), #C/N/P, CDSL/NSDL/PHYSICAL
+        "StartDate" => params[:start_date], #start time of the sip, DD/MM/YYYY
+        "FrequencyType" => params[:frequency_type], #type of requency , MONTHLY/QUARTERLY/WEEKLY
+        "FrequencyAllowed" => params[:frequency_allowed], # roling frequency
+        "InstallmentAmount" => params[:installment_amount],#installment amount
+        "NoOfInstallment" => params[:no_of_installment],
+        "Remarks" => params[:remarks],
+        "FolioNo" => '', #Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
+        "FirstOrderFlag" => "Y", #Must be calculated with database
+        "SubBrCode" => params[:sub_br_code],# Sub Broker code
+        "EUIN" => params[:euin], # EUIN number
+        "EUINVal" => params[:euin_val],
+        "DPC" => params[:dpc].try(:upcase), #Y/N, DPC flag for purchase transactions
+        "RegId" => '',#SIP reg number. In case of new registration this will be blank
+        "IPAdd" => params['ip_add'],
+        "Password" => params[:password],
+        "PassKey" => params[:pass_key],
+        "Parma1" => params[:param_1],
+        "Parma2" => params[:param_2],
+        "Parma3" => params[:param_3]
+    }
+
+    response = call_soap_client(client, 'sip_order_entry_param', data)
+    hash = response.hash
+    result_string = hash['envelope']['body']['sip_order_entry_param_response']['sip_order_entry_param_result']
+
+    result = result_string.split('|')
+
+    # Respond converted json response
+    if result.last.to_i == 0
+      render status: 200, json: {
+          status: "success",
+          transaction_code: result[0],
+          unique_reference_number: result[1],
+          member_id: result[2],
+          client_code: result[3],
+          user_id: result[4],
+          sip_reg_id: result[5], #in case new SIP, BSE XSIP registration will be populated.
+          bse_remarks: result[6],
+          success_flag: result.last
+      }.to_json
+    else
+      # raise result_message
+      render status: 200, json: {
+          status: "fail",
+          success_flag: result.last,
+          bse_remarks: result[6] # if failed, result_message will be alert message
+      }.to_json
+    end
+  end
 end

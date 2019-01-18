@@ -1,0 +1,2 @@
+class SipOrder < ApplicationRecord
+end
