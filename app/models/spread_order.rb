@@ -1,0 +1,2 @@
+class SpreadOrder < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class XsipOrder < ApplicationRecord
+end
