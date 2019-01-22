@@ -10,4 +10,13 @@ Rails.application.routes.draw do
   #Sip Order Entry Param
   post 'sip_order_entry_param', to: 'apis#sip_order_entry_param', as: :sip_order_entry_param
 
+  #XSip Order Entry Param
+  post 'xsip_order_entry_param', to: 'apis#xsip_order_entry_param', as: :xsip_order_entry_param
+
+  #Spread Order Entry Param
+  post 'spread_order_entry_param', to: 'apis#spread_order_entry_param', as: :spread_order_entry_param
+
+  #Switch Order Entry Param
+  post 'switch_order_entry_param', to: 'apis#switch_order_entry_param', as: :switch_order_entry_param
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_080647) do
+ActiveRecord::Schema.define(version: 2019_01_22_072513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,36 @@ ActiveRecord::Schema.define(version: 2019_01_21_080647) do
     t.string "euin_flag", default: "Y", null: false
     t.string "min_redeem", default: "Y", null: false
     t.string "dpc", default: "Y", null: false
+    t.string "ip_add"
+    t.string "param_1"
+    t.string "param_2"
+    t.string "param_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "switch_orders", force: :cascade do |t|
+    t.string "trans_code", default: "NEW", null: false
+    t.string "trans_no", null: false
+    t.integer "order_id"
+    t.integer "user_id", null: false
+    t.string "member_id", null: false
+    t.string "client_code", null: false
+    t.string "from_scheme_code", null: false
+    t.string "to_scheme_code", null: false
+    t.string "buy_sell", default: "P", null: false
+    t.string "buy_sell_type", default: "FRESH", null: false
+    t.string "dptxn", default: "C", null: false
+    t.string "switch_amount"
+    t.string "switch_units"
+    t.string "all_units_flag", default: "N", null: false
+    t.string "folio_no"
+    t.string "remarks"
+    t.string "kyc_status", default: "Y", null: false
+    t.string "sub_br_code"
+    t.string "euin", null: false
+    t.string "euin_val", default: "Y", null: false
+    t.string "min_redeem", default: "Y", null: false
     t.string "ip_add"
     t.string "param_1"
     t.string "param_2"

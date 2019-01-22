@@ -1,0 +1,2 @@
+class SwitchOrder < ApplicationRecord
+end
