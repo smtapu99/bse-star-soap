@@ -63,14 +63,14 @@ class ApisController < ApplicationController
       "UserID" => params[:user_id],
       "MemberId" => params[:member_id],#Member code as given by BSE
       "ClientCode" => params[:client_code],
-      "SchemeCd" => SecureRandom.hex,#BSE scheme code
+      "SchemeCd" => params[:scheme_code],#BSE scheme code
       "BuySell" => params[:buy_sell].try(:upcase), #P/R Type of transaction i.e.Purchase or Redemption
       "BuySellType" => params[:buy_sell_type].try(:upcase), #Buy/Sell type i.e. fresh or additional. FRESH/ADDITIONAL
       "DPTxn" => params[:dptxn].try(:upcase), #C/N/P, CDSL/NSDL/PHYSICAL
       "OrderVal" => params[:all_redeem].try(:downcase) == 'y' ? '': params[:amount], # Purchase/Redemption amount(redemption amount only in case of physical redemption)
       "Qty" => params[:all_redeem].try(:downcase) == 'y' ? '': params[:amount], # Redemption quantity
       "AllRedeem" => params[:all_redeem].try(:upcase), # All units flag, If this Flag is "Y" then units and amount column should be blank
-      "FolioNo" => '',#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
+      "FolioNo" => params[:folio_no],#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
       "Remarks" => params[:remarks] || '',
       "KYCStatus" => params[:kyc_status].try(:upcase), # Y/N, KYC status of client
       "RefNo" =>'', #Internal reference number
@@ -285,7 +285,7 @@ class ApisController < ApplicationController
         "UserID" => params[:user_id],
         "MemberId" => params[:member_id],#Member code as given by BSE
         "ClientCode" => params[:client_code],
-        "SchemeCode" => SecureRandom.hex,#BSE scheme code
+        "SchemeCode" => params[:scheme_code],#BSE scheme code
         "BuySell" => params[:buy_sell].try(:upcase), #P/R Type of transaction i.e.Purchase or Redemption
         "BuySellType" => params[:buy_sell_type].try(:upcase), #Buy/Sell type i.e. fresh or additional. FRESH/ADDITIONAL
         "DPTxn" => params[:dptxn].try(:upcase), #C/N/P, CDSL/NSDL/PHYSICAL
@@ -293,7 +293,7 @@ class ApisController < ApplicationController
         "RedemptionAmt" => params[:redeem_amount], # Redemption quantity
         "AllUnitFlag" => params[:all_units_flag].try(:upcase), # All units flag, If this Flag is "Y" then units and amount column should be blank
         "RedeemDate" => params[:redeem_date], #redeemtion time of the sip, DD/MM/YYYY
-        "FolioNo" => '',#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
+        "FolioNo" => params[:folio_no],#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
         "Remarks" => params[:remarks] || '',
         "KYCStatus" => params[:kyc_status].try(:upcase), # Y/N, KYC status of client
         "RefNo" =>'', #Internal reference number
@@ -302,7 +302,7 @@ class ApisController < ApplicationController
         "SubberCode" => params[:sub_br_code],# Sub Broker code
         "SubBroCode" => params[:sub_br_code],# Sub Broker code
         "EUIN" => params[:euin], # EUIN number
-        "EUINVal" => params[:euin_val],
+        "EUINVal" => params[:euin_val], # y/n
         "MinRedeem" => params[:min_redeem].try(:upcase), #Y/N,  Minimum redemption flag
         "DPC" => params[:dpc].try(:upcase), #Y/N, DPC flag for purchase transactions
         "IPAddress" => params[:ip_address] || '',
