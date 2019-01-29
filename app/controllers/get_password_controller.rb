@@ -24,7 +24,7 @@ class GetPasswordController < ApplicationController
                           <ns1:PassKey>9958788281</ns1:PassKey>
                         </ns1:getPassword>
                       </soap-env:Body>
-                      </soap-env:Envelope>'
+                    </soap-env:Envelope>'
 
     response = http.request(request)
     converted = Hash.from_xml(response.body).to_json

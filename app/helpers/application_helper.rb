@@ -6,9 +6,9 @@ module ApplicationHelper
     lambda { |key| key.snakecase.downcase }
   end
 
-  def generate_header(action, to = nil)
-    method_url = METHOD_ORDER_URL[LIVE] + action
-    svc_url = SVC_ORDER_URL[LIVE]
+  def generate_header(action, to)
+    method_url = action
+    svc_url = to
 
     {
         "csk:Action" => method_url,
@@ -26,10 +26,10 @@ module ApplicationHelper
     }
   end
 
-  def get_soap_client(soap_header)
+  def get_soap_client(wsdl, soap_header)
     # create a client for the service
     Savon.client(
-        wsdl: 'http://www.bsestarmf.in/MFOrderEntry/MFOrder.svc?singleWsdl',
+        wsdl: wsdl,
         soap_header: soap_header,
         pretty_print_xml: true,
         namespace_identifier: 'ns1',
