@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   #Switch Order Entry Param
   post 'switch_order_entry_param', to: 'apis#switch_order_entry_param', as: :switch_order_entry_param
 
+  #get encrypted password
+  post 'mfa_get_password', to: 'mfas_request#mfa_get_password', as: :mfa_get_password
   #MUTUAL FUND Additional Services Request
   post 'mfa_service/fatca', to: 'mfas_request#mfa_service_request', as: :mfa_fatca
 end

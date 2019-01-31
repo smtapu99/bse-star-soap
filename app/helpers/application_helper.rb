@@ -19,23 +19,30 @@ module ApplicationHelper
     }
   end
 
-  def get_namespaces
+  def get_order_entry_namespaces
     {
-        "xmlns:soap-env" =>  "http://www.w3.org/2003/05/soap-envelope",
-        "xmlns:ns1" => "http://bsestarmf.in/",
+        "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+        "xmlns:bse" => "http://bsestarmf.in/",
     }
   end
 
-  def get_soap_client(wsdl, soap_header)
+  def get_mfapi_namespaces
+    {
+        "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+        "xmlns:bse" => "http://www.bsestarmf.in/2016/01/",
+    }
+  end
+
+  def get_soap_client(wsdl, soap_header, namespaces)
     # create a client for the service
     Savon.client(
         wsdl: wsdl,
         soap_header: soap_header,
         pretty_print_xml: true,
-        namespace_identifier: 'ns1',
+        namespace_identifier: 'bse',
         convert_request_keys_to: 'camelcase',  # or one of [:lower_camelcase, :upcase, :none]
-        env_namespace: 'soap-env',
-        namespaces: get_namespaces,
+        env_namespace: 'soap',
+        namespaces: namespaces,
         strip_namespaces: true, #to strip any namespace identifiers from the response
         convert_response_tags_to: downcase_response_tag, #every XML tag and simply has to return the converted tag.
         headers: {

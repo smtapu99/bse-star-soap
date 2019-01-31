@@ -9,7 +9,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'getPassword', SVC_ORDER_URL[LIVE]) # "xmlns:ns3" => "http://www.w3.org/2005/08/addressing"
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     data = {
         "UserId" => params[:user_id],
@@ -54,7 +54,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'orderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     data = {
       "TransCode" => params[:trans_code].try(:upcase), #NEW/MOD/CXL, Order : New/Modification/Cancellation
@@ -124,7 +124,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'sipOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     #Must be calculated
     # UniqueRefNo
@@ -199,7 +199,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'xsipOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     #Must be calculated
     # UniqueRefNo
@@ -276,7 +276,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'spreadOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     data = {
         "TransactionCode" => params[:trans_code].try(:upcase), #NEW/MOD/CXL, Order : New/Modification/Cancellation
@@ -347,7 +347,7 @@ class ApisController < ApplicationController
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'switchOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
-    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header)
+    client = get_soap_client(WSDL_ORDER_URL[LIVE], soap_header, get_order_entry_namespaces)
 
     data = {
         "TransCode" => params[:trans_code].try(:upcase), #NEW/MOD/CXL, Order : New/Modification/Cancellation
