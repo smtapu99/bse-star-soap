@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3dffbb5-59ed-422c-9acd-7eba071351c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ror_dev.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-    </list>
+    <list default="true" id="f3dffbb5-59ed-422c-9acd-7eba071351c2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -66,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
-              <caret line="191" column="25" lean-forward="true" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -169,6 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,7 +211,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,17 +392,17 @@
       <workItem from="1549934364967" duration="4292000" />
       <workItem from="1550110876480" duration="6112000" />
       <workItem from="1550126599627" duration="304000" />
+      <workItem from="1550162119640" duration="463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17958000" />
+    <option name="totallyTimeSpent" value="18421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="957" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.257886" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26065302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -538,7 +533,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
-          <caret line="191" column="25" lean-forward="true" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
         </state>
       </provider>
     </entry>

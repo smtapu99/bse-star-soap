@@ -1,4 +1,4 @@
-class ApisController < ApplicationController
+class OrdersController < ApplicationController
 
   include TransactionHelper
   ################ SOAP FUNCTIONS to get/post data - called by MAIN FUNCTIONS
@@ -50,7 +50,7 @@ class ApisController < ApplicationController
   end
 
   ## fire SOAP query to post the order
-  def order_entry_param
+  def order_entry
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'orderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
@@ -120,7 +120,7 @@ class ApisController < ApplicationController
   end
 
   ## fire SOAP query to post the SIP order
-  def sip_order_entry_param
+  def sip_order_entry
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'sipOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
@@ -195,7 +195,7 @@ class ApisController < ApplicationController
   end
 
   ## fire SOAP query to post the XSIP order
-  def xsip_order_entry_param
+  def xsip_order_entry
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'xsipOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
@@ -272,7 +272,7 @@ class ApisController < ApplicationController
   end
 
   ## fire SOAP query to post the spread order
-  def spread_order_entry_param
+  def spread_order_entry
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'spreadOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service
@@ -343,7 +343,7 @@ class ApisController < ApplicationController
   end
 
   ## fire SOAP query to post the switch order
-  def switch_order_entry_param
+  def switch_order_entry
     soap_header = generate_header(METHOD_ORDER_URL[LIVE] + 'switchOrderEntryParam', SVC_ORDER_URL[LIVE])
 
     # create a client for the service

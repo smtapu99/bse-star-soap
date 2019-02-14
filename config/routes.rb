@@ -2,22 +2,22 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Login
-  post 'get_password', to: 'apis#get_password_response', as: :get_password_response
+  post 'get_password', to: 'orders#get_password_response', as: :get_password_response
 
-  #Order Entry Param
-  post 'order_entry_param', to: 'apis#order_entry_param', as: :order_entry_param
+  #Order Entry
+  post 'order_entry', to: 'orders#order_entry', as: :order_entry
 
-  #Sip Order Entry Param
-  post 'sip_order_entry_param', to: 'apis#sip_order_entry_param', as: :sip_order_entry_param
+  #Sip Order Entry
+  post 'sip_order_entry', to: 'orders#sip_order_entry', as: :sip_order_entry
 
-  #XSip Order Entry Param
-  post 'xsip_order_entry_param', to: 'apis#xsip_order_entry_param', as: :xsip_order_entry_param
+  #XSip Order Entry
+  post 'xsip_order_entry', to: 'orders#xsip_order_entry', as: :xsip_order_entry
 
-  #Spread Order Entry Param
-  post 'spread_order_entry_param', to: 'apis#spread_order_entry_param', as: :spread_order_entry_param
+  #Spread Order Entry
+  post 'spread_order_entry', to: 'orders#spread_order_entry', as: :spread_order_entry
 
-  #Switch Order Entry Param
-  post 'switch_order_entry_param', to: 'apis#switch_order_entry_param', as: :switch_order_entry_param
+  #Switch Order Entry
+  post 'switch_order_entry', to: 'orders#switch_order_entry', as: :switch_order_entry
 
   #get encrypted password
   post 'mfa_get_password', to: 'mfas_request#mfa_get_password', as: :mfa_get_password
