@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   #get encrypted password
   post 'mfa_get_password', to: 'mfas_request#mfa_get_password', as: :mfa_get_password
   #MUTUAL FUND Additional Services Request
-  post 'mfa_service/fatca', to: 'mfas_request#mfa_service_request', as: :mfa_fatca
+  post 'mfa_service/fatca', to: 'mfas_request#mfa_service_fatca_request', as: :mfa_fatca
+  post 'mfa_service/ucc-mfd', to: 'mfas_request#mfa_service_ucc_request', as: :mfa_ucc_mfd
 end

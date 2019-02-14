@@ -23,9 +23,204 @@ class MfasRequestController < ApplicationController
     [result_code, result_message]
 
   end
-  
-    ## MUTUAL FUND Additional Services Request
-  def mfa_service_request
+
+  ## MUTUAL FUND Additional Services-FATCA Request
+  def mfa_service_fatca_request
+    flag = "01"
+    pan = 'NIGHT1996W'
+    tax_status = '01'
+    occ_code = '01'
+    if occ_code == '01'
+      srce_wealt = '02'
+      occ_type = 'B'
+    else
+      srce_wealt = '01'
+      occ_type = 'S'
+    end
+    dict = {
+        :PAN_RP => pan,
+        :PEKRN => '',
+        :INV_NAME => 'Jon',
+        :DOB => '',
+        :FR_NAME => '',
+        :SP_NAME => '',
+        :TAX_STATUS => tax_status,
+        :DATA_SRC => 'E',
+        :ADDR_TYPE => '1',
+        :PO_BIR_INC => 'IN',
+        :CO_BIR_INC => 'IN',
+        :TAX_RES1 => 'IN',
+        :TPIN1 => pan,
+        :ID1_TYPE => 'C',
+        :TAX_RES2 => '',
+        :TPIN2 => '',
+        :ID2_TYPE => '',
+        :TAX_RES3 => '',
+        :TPIN3 => '',
+        :ID3_TYPE => '',
+        :TAX_RES4 => '',
+        :TPIN4 => '',
+        :ID4_TYPE => '',
+        :SRCE_WEALT => srce_wealt,
+        :CORP_SERVS => '',
+        :INC_SLAB => '31',
+        :NET_WORTH => '',
+        :NW_DATE => '',
+        :PEP_FLAG => 'N',
+        :OCC_CODE => occ_code,
+        :OCC_TYPE => occ_type,
+        :EXEMP_CODE => '',
+        :FFI_DRNFE => '',
+        :GIIN_NO => '',
+        :SPR_ENTITY => '',
+        :GIIN_NA => '',
+        :GIIN_EXEMC => '',
+        :NFFE_CATG => '',
+        :ACT_NFE_SC => '',
+        :NATURE_BUS => '',
+        :REL_LISTED => '',
+        :EXCH_NAME => 'O',
+        :UBO_APPL => 'N',
+        :UBO_COUNT => '',
+        :UBO_NAME => '',
+        :UBO_PAN => '',
+        :UBO_NATION => '',
+        :UBO_ADD1 => '',
+        :UBO_ADD2 => '',
+        :UBO_ADD3 => '',
+        :UBO_CITY => '',
+        :UBO_PIN => '',
+        :UBO_STATE => '',
+        :UBO_CNTRY => '',
+        :UBO_ADD_TY => '',
+        :UBO_CTR => '',
+        :UBO_TIN => '',
+        :UBO_ID_TY => '',
+        :UBO_COB => '',
+        :UBO_DOB => '',
+        :UBO_GENDER => '',
+        :UBO_FR_NAM => '',
+        :UBO_OCC => '',
+        :UBO_OCC_TY => '',
+        :UBO_TEL => '',
+        :UBO_MOBILE => '',
+        :UBO_CODE => 'C01',
+        :UBO_HOL_PC => '',
+        :SDF_FLAG => '',
+        :UBO_DF => 'N',
+        :AADHAAR_RP => '',
+        :NEW_CHANGE => 'N',
+        :LOG_NAME => '196.15.16.107#29-Jan-19;16:4',
+        :DOC1 => '',
+        :DOC2 => ''
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  ## MUTUAL FUND Additional Services-UCC-MFD Request
+  # Creates a user on BSEStar (called client in bse lingo)
+  def mfa_service_ucc_request
+    flag = "02"
+    pan = 'NIGHT1996W'
+    tax_status = '01'
+    occ_code = '01'
+    bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
+    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
+    ifsc_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+
+    address = 'Shenyang, Liaoningsheng, hepingqu'
+    add1 = address[0...30]
+    add2 = address.length > 30 ? address[30...60] : ''
+    add3 = address.length > 60 ? address[60...90] : ''
+    email = 'fatpig0416@gmail.com'
+    pin_code = '110001'
+    city = 'The Wall'
+    state = 'Winterfell'
+    phone = '9167783870'
+
+
+    dict = { #params that will be sent as param for user creation in bse
+        :CODE => 1,
+        :HOLDING => 'SI',
+        :TAXSTATUS => tax_status,
+        :OCCUPATIONCODE => occ_code,
+        :APPNAME1 => 'Jon',
+        :APPNAME2 => '',
+        :APPNAME3 => '',
+        :DOB => '16/04/1993',
+        :GENDER => 'M',
+        :FATHER_HUSBAND_gurdian => '',
+        :PAN => pan,
+        :NOMINEE => '',
+        :NOMINEE_RELATION => '',
+        :GUARDIANPAN => '',
+        :TYPE => 'P',
+        :DEFAULTDP => '',
+        :CDSLDPID => '',
+        :CDSLCLTID => '',
+        :NSDLDPID => '',
+        :NSDLCLTID => '',
+        :ACCTYPE_1 => bank_acc_type,
+        :ACCNO_1 => bank_acc_number,
+        :MICRNO_1 => '',
+        :NEFT_IFSCCODE_1 => ifsc_code,
+        :default_bank_flag_1 => 'Y',
+        :ACCTYPE_2 => '',
+        :ACCNO_2 => '',
+        :MICRNO_2 => '',
+        :NEFT_IFSCCODE_2 => '',
+        :default_bank_flag_2 => '',
+        :ACCTYPE_3 => '',
+        :ACCNO_3 => '',
+        :MICRNO_3 => '',
+        :NEFT_IFSCCODE_3 => '',
+        :default_bank_flag_3 => '',
+        :ACCTYPE_4 => '',
+        :ACCNO_4 => '',
+        :MICRNO_4 => '',
+        :NEFT_IFSCCODE_4 => '',
+        :default_bank_flag_4 => '',
+        :ACCTYPE_5 => '',
+        :ACCNO_5 => '',
+        :MICRNO_5 => '',
+        :NEFT_IFSCCODE_5 => '',
+        :default_bank_flag_5 => '',
+        :CHEQUENAME => '',
+        :ADD1 => add1,
+        :ADD2 => add2,
+        :ADD3 => add3,
+        :CITY => city,
+        :STATE => state,
+        :PINCODE => pin_code,
+        :COUNTRY => 'India',
+        :RESIPHONE => '',
+        :RESIFAX => '',
+        :OFFICEPHONE => '',
+        :OFFICEFAX => '',
+        :EMAIL => email,
+        :COMMMODE => 'M',
+        :DIVPAYMODE => '02',
+        :PAN2 => '',
+        :PAN3 => '',
+        :MAPINNO => '',
+        :CM_FORADD1 => '',
+        :CM_FORADD2 => '',
+        :CM_FORADD3 => '',
+        :CM_FORCITY => '',
+        :CM_FORPINCODE => '',
+        :CM_FORSTATE => '',
+        :CM_FORCOUNTRY => '',
+        :CM_FORRESIPHONE => '',
+        :CM_FORRESIFAX => '',
+        :CM_FOROFFPHONE => '',
+        :CM_FOROFFFAX => '',
+        :CM_MOBILE => phone,
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  ## MUTUAL FUND Additional Services Request
+  def mfa_service_request(flag, dict)
 
     encrypted_password_response = mfa_get_password(params[:user_id], params[:member_id], params[:password], params[:pass_key])
 
@@ -35,94 +230,15 @@ class MfasRequestController < ApplicationController
         # create a client for the service
         client = get_soap_client(WSDL_UPLOAD_URL[LIVE], soap_header, get_mfapi_namespaces)
 
-        fatca_flag = "01"
-        fatca_dict = {
-            :PAN_RP => 'NIGHT1996W',
-            :PEKRN => '',
-            :INV_NAME => 'Jon',
-            :DOB => '',
-            :FR_NAME => '',
-            :SP_NAME => '',
-            :TAX_STATUS => '01',
-            :DATA_SRC => 'E',
-            :ADDR_TYPE => '1',
-            :PO_BIR_INC => 'IN',
-            :CO_BIR_INC => 'IN',
-            :TAX_RES1 => 'IN',
-            :TPIN1 => 'NIGHT1996W',
-            :ID1_TYPE => 'C',
-            :TAX_RES2 => '',
-            :TPIN2 => '',
-            :ID2_TYPE => '',
-            :TAX_RES3 => '',
-            :TPIN3 => '',
-            :ID3_TYPE => '',
-            :TAX_RES4 => '',
-            :TPIN4 => '',
-            :ID4_TYPE => '',
-            :SRCE_WEALT => '01',
-            :CORP_SERVS => '',
-            :INC_SLAB => '31',
-            :NET_WORTH => '',
-            :NW_DATE => '',
-            :PEP_FLAG => 'N',
-            :OCC_CODE => '01',
-            :OCC_TYPE => 'B',
-            :EXEMP_CODE => '',
-            :FFI_DRNFE => '',
-            :GIIN_NO => '',
-            :SPR_ENTITY => '',
-            :GIIN_NA => '',
-            :GIIN_EXEMC => '',
-            :NFFE_CATG => '',
-            :ACT_NFE_SC => '',
-            :NATURE_BUS => '',
-            :REL_LISTED => '',
-            :EXCH_NAME => 'O',
-            :UBO_APPL => 'N',
-            :UBO_COUNT => '',
-            :UBO_NAME => '',
-            :UBO_PAN => '',
-            :UBO_NATION => '',
-            :UBO_ADD1 => '',
-            :UBO_ADD2 => '',
-            :UBO_ADD3 => '',
-            :UBO_CITY => '',
-            :UBO_PIN => '',
-            :UBO_STATE => '',
-            :UBO_CNTRY => '',
-            :UBO_ADD_TY => '',
-            :UBO_CTR => '',
-            :UBO_TIN => '',
-            :UBO_ID_TY => '',
-            :UBO_COB => '',
-            :UBO_DOB => '',
-            :UBO_GENDER => '',
-            :UBO_FR_NAM => '',
-            :UBO_OCC => '',
-            :UBO_OCC_TY => '',
-            :UBO_TEL => '',
-            :UBO_MOBILE => '',
-            :UBO_CODE => 'C01',
-            :UBO_HOL_PC => '',
-            :SDF_FLAG => '',
-            :UBO_DF => 'N',
-            :AADHAAR_RP => '',
-            :NEW_CHANGE => 'N',
-            :LOG_NAME => '196.15.16.107#29-Jan-19;16:4',
-            :DOC1 => '',
-            :DOC2 => ''
-        }
-
-        fatca_param = []
-        fatca_dict.each do |key, value|
-          fatca_param << value
+        mfa_param = []
+        dict.each do |key, value|
+          mfa_param << value
         end
         data = {
-            "Flag" => fatca_flag,
+            "Flag" => flag,
             "UserId" => params[:user_id],
             "EncryptedPassword" => encrypted_password_response[1],
-            "param" => fatca_param.join("|")
+            "param" => mfa_param.join("|")
         }
 
         response = call_soap_client(client, 'mfapi', data)
