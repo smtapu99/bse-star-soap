@@ -1,5 +1,6 @@
 class MfasRequestController < ApplicationController
 
+  include MfaServiceHelper
   def mfa_get_password(user_id, member_id, password, pass_key)
     soap_header = generate_header(METHOD_UPLOAD_URL[LIVE] + 'getPassword', SVC_UPLOAD_URL[LIVE]) # "xmlns:ns3" => "http://www.w3.org/2005/08/addressing"
 
@@ -26,7 +27,7 @@ class MfasRequestController < ApplicationController
 
   ## MUTUAL FUND Additional Services-FATCA Request
   def mfa_service_fatca_request
-    flag = "01"
+    flag = MFA_FLAGS[:fatca_upload]
     pan = 'NIGHT1996W'
     tax_status = '01'
     occ_code = '01'
@@ -120,7 +121,7 @@ class MfasRequestController < ApplicationController
   ## MUTUAL FUND Additional Services-UCC-MFD Request
   # Creates a user on BSEStar (called client in bse lingo)
   def mfa_service_ucc_request
-    flag = "02"
+    flag = MFA_FLAGS[:ucc_mfd]
     pan = 'NIGHT1996W'
     tax_status = '01'
     occ_code = '01'
@@ -149,7 +150,7 @@ class MfasRequestController < ApplicationController
         :APPNAME3 => '',
         :DOB => '16/04/1993',
         :GENDER => 'M',
-        :FATHER_HUSBAND_gurdian => '',
+        :FATHER_HUSBAND_GUARDIAN => '',
         :PAN => pan,
         :NOMINEE => '',
         :NOMINEE_RELATION => '',
@@ -164,27 +165,27 @@ class MfasRequestController < ApplicationController
         :ACCNO_1 => bank_acc_number,
         :MICRNO_1 => '',
         :NEFT_IFSCCODE_1 => ifsc_code,
-        :default_bank_flag_1 => 'Y',
+        :DEFAULT_BANK_FLAG_1 => 'Y',
         :ACCTYPE_2 => '',
         :ACCNO_2 => '',
         :MICRNO_2 => '',
         :NEFT_IFSCCODE_2 => '',
-        :default_bank_flag_2 => '',
+        :DEFAULT_BANK_FLAG_2 => '',
         :ACCTYPE_3 => '',
         :ACCNO_3 => '',
         :MICRNO_3 => '',
         :NEFT_IFSCCODE_3 => '',
-        :default_bank_flag_3 => '',
+        :DEFAULT_BANK_FLAG_3 => '',
         :ACCTYPE_4 => '',
         :ACCNO_4 => '',
         :MICRNO_4 => '',
         :NEFT_IFSCCODE_4 => '',
-        :default_bank_flag_4 => '',
+        :DEFAULT_BANK_FLAG_4 => '',
         :ACCTYPE_5 => '',
         :ACCNO_5 => '',
         :MICRNO_5 => '',
         :NEFT_IFSCCODE_5 => '',
-        :default_bank_flag_5 => '',
+        :DEFAULT_BANK_FLAG_5 => '',
         :CHEQUENAME => '',
         :ADD1 => add1,
         :ADD2 => add2,
@@ -221,12 +222,107 @@ class MfasRequestController < ApplicationController
 
   ## fire SOAP query to get the payment url
   # create payment
-  def mfa_service_get_payment
-    flag = "03"
+  def mfa_service_payment_gateway
+    flag = MFA_FLAGS[:payment_gateway]
     dict = {
         :member_id => params[:member_id],
         :client_code => params[:client_code],
         :logout_url => params[:logout_url]
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # Change password
+  def mfa_service_change_password
+    flag = MFA_FLAGS[:change_password]
+    dict = {
+        :old_password => params[:password],
+        :new_password => params[:new_password],
+        :conf_password => params[:conf_password]
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # UCC/CLIENT CREATION– MFI
+  def mfa_service_ucc_mfi
+    flag = MFA_FLAGS[:ucc_mfi]
+    pan = 'NIGHT1996W'
+    tax_status = '01'
+    occ_code = '01'
+    bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
+    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
+    neft_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+
+    address = "Squire to the Lord Commander of the Night's Watch"
+    add1 = address[0...30]
+    add2 = address.length > 30 ? address[30...60] : ''
+    add3 = address.length > 60 ? address[60...90] : ''
+    email = 'fatpig0416@gmail.com'
+    pin_code = '110001'
+    city = 'The Wall'
+    state = 'MA'
+    phone = '9167783870'
+    dict = {
+        :CODE => 1,
+        :HOLDING => 'SI',
+        :TAXSTATUS => tax_status,
+        :OCCUPATIONCODE => occ_code,
+        :APPNAME1 => 'Jon',
+        :APPNAME2 => '',
+        :APPNAME3 => '',
+        :DOB => '16/04/1993',
+        :GENDER => 'M',
+        :FATHER_HUSBAND_GUARDIAN => '',
+        :PAN => pan,
+        :NOMINEE => '',
+        :NOMINEE_RELATION => '',
+        :GUARDIANPAN => '',
+        :TYPE => 'P',
+        :DEFAULTDP => '',
+        :CDSLDPID => '',
+        :CDSLCLTID => '',
+        :NSDLDPID => '',
+        :NSDLCLTID => '',
+
+        :BANK_NAME => '',
+        :BANK_BRANCH => '',
+        :BANK_CITY => '',
+
+        :ACCTYPE => bank_acc_type,
+        :ACCNO => bank_acc_number,
+        :MICRNO => '',
+        :NEFT_CODE => neft_code,
+        # :DEFAULT_BANK_FLAG_1 => 'Y',
+        :CHEQUENAME => '',
+        :ADD1 => add1,
+        :ADD2 => add2,
+        :ADD3 => add3,
+        :CITY => city,
+        :STATE => state,
+        :PINCODE => pin_code,
+        :COUNTRY => 'India',
+        :RESIPHONE => '',
+        :RESIFAX => '',
+        :OFFICEPHONE => '',
+        :OFFICEFAX => '',
+        :EMAIL => email,
+        :COMMMODE => 'M',
+        :DIVPAYMODE => '02',
+        :PAN2 => '',
+        :PAN3 => '',
+        :MAPINNO => '',
+        :CM_FORADD1 => '',
+        :CM_FORADD2 => '',
+        :CM_FORADD3 => '',
+        :CM_FORCITY => '',
+        :CM_FORPINCODE => '',
+        :CM_FORSTATE => '',
+        :CM_FORCOUNTRY => '101', #India
+        :CM_FORRESIPHONE => '',
+        :CM_FORRESIFAX => '',
+        :CM_FOROFFPHONE => '',
+        :CM_FOROFFFAX => '',
+        :CM_MOBILE => phone,
     }
     mfa_service_request(flag, dict)
   end

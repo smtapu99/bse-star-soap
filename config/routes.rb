@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Login
-  post 'get_password', to: 'orders#get_password_response', as: :get_password_response
+  post 'get_password', to: 'transactions#get_password_response', as: :get_password_response
 
   #Order Entry
   post 'order_entry', to: 'transactions#order_entry', as: :order_entry
@@ -25,4 +25,6 @@ Rails.application.routes.draw do
   post 'mfa_service/fatca', to: 'mfas_request#mfa_service_fatca_request', as: :mfa_fatca
   post 'mfa_service/ucc-mfd', to: 'mfas_request#mfa_service_ucc_request', as: :mfa_ucc_mfd
   post 'mfa_service/payment-gateway',to: 'mfas_request#mfa_service_get_payment', as: :mfa_payment_gateway
+  post 'mfa_service/change-password',to: 'mfas_request#mfa_service_change_password', as: :mfa_change_password
+  post 'mfa_service/ucc-mfi',to: 'mfas_request#mfa_service_ucc_mfi', as: :mfa_service_ucc_mfi
 end

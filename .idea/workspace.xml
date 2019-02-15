@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3dffbb5-59ed-422c-9acd-7eba071351c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/orders_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/transactions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/bse_settings_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/bse_settings_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/mfa_service_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/mfa_service_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/controllers/orders_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/transactions_controller_spec.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -23,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/soap_api@Development__soap_api.rcov" NAME="Development: soap_api Coverage Results" MODIFIED="1550197518373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="soap_api" />
+    <SUITE FILE_PATH="coverage/soap_api@Development__soap_api.rcov" NAME="Development: soap_api Coverage Results" MODIFIED="1550201445112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="soap_api" />
     <SUITE FILE_PATH="coverage/soap_api@routes.rcov" NAME="routes Coverage Results" MODIFIED="1549934733113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" MODULE_NAME="soap_api" />
   </component>
   <component name="FileEditorManager">
@@ -31,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+            <state relative-caret-position="544">
+              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -49,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/bse_settings_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            <state relative-caret-position="528">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -67,30 +64,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1394">
-              <caret line="137" column="15" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+            <state relative-caret-position="297">
+              <caret line="275" column="18" lean-forward="true" selection-start-line="275" selection-start-column="18" selection-end-line="275" selection-end-column="18" />
               <folding>
                 <element signature="e#55#900#0" />
                 <element signature="e#955#3215#0" />
+                <element signature="e#6225#6263#0" />
+                <element signature="e#6618#6660#0" />
+                <element signature="e#6254#7916#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+        <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+            <state relative-caret-position="198">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -157,6 +153,7 @@
         <option value="$PROJECT_DIR$/app/helpers/transaction_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/bse_settings_helper.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/mfa_service_helper.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" />
       </list>
@@ -411,12 +408,12 @@
       <workItem from="1550126599627" duration="304000" />
       <workItem from="1550162119640" duration="463000" />
       <workItem from="1550167375474" duration="1119000" />
-      <workItem from="1550193532469" duration="3856000" />
+      <workItem from="1550193532469" duration="9207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23396000" />
+    <option name="totallyTimeSpent" value="28747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="957" extended-state="6" />
@@ -487,20 +484,6 @@
     <entry file="file://$PROJECT_DIR$/config/environment.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/transaction_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
@@ -529,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/bse_settings_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/transactions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -543,20 +519,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/transaction_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/bse_settings_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+        <state relative-caret-position="544">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1394">
-          <caret line="137" column="15" selection-start-line="137" selection-start-column="15" selection-end-line="137" selection-end-column="15" />
+        <state relative-caret-position="297">
+          <caret line="275" column="18" lean-forward="true" selection-start-line="275" selection-start-column="18" selection-end-line="275" selection-end-column="18" />
           <folding>
             <element signature="e#55#900#0" />
             <element signature="e#955#3215#0" />
+            <element signature="e#6225#6263#0" />
+            <element signature="e#6618#6660#0" />
+            <element signature="e#6254#7916#0" />
           </folding>
         </state>
       </provider>
