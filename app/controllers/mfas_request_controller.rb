@@ -261,7 +261,6 @@ class MfasRequestController < ApplicationController
     pin_code = '110001'
     city = 'The Wall'
     state = 'MA'
-    phone = '9167783870'
     dict = {
         :CODE => 1,
         :HOLDING => 'SI',
@@ -277,22 +276,18 @@ class MfasRequestController < ApplicationController
         :NOMINEE => '',
         :NOMINEE_RELATION => '',
         :GUARDIANPAN => '',
-        :TYPE => 'P',
         :DEFAULTDP => '',
         :CDSLDPID => '',
         :CDSLCLTID => '',
         :NSDLDPID => '',
         :NSDLCLTID => '',
-
-        :BANK_NAME => '',
-        :BANK_BRANCH => '',
-        :BANK_CITY => '',
-
+        :BANK_NAME => 'INDIAN',
+        :BANK_BRANCH => 'GITAM UNIVERSITY',
+        :BANK_CITY => 'ANDHRA PRADESH',
         :ACCTYPE => bank_acc_type,
         :ACCNO => bank_acc_number,
         :MICRNO => '',
         :NEFT_CODE => neft_code,
-        # :DEFAULT_BANK_FLAG_1 => 'Y',
         :CHEQUENAME => '',
         :ADD1 => add1,
         :ADD2 => add2,
@@ -321,8 +316,7 @@ class MfasRequestController < ApplicationController
         :CM_FORRESIPHONE => '',
         :CM_FORRESIFAX => '',
         :CM_FOROFFPHONE => '',
-        :CM_FOROFFFAX => '',
-        :CM_MOBILE => phone,
+        :CM_FOROFFFAX => ''
     }
     mfa_service_request(flag, dict)
   end
