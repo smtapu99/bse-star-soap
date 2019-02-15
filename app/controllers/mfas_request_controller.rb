@@ -128,14 +128,14 @@ class MfasRequestController < ApplicationController
     bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
     ifsc_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
 
-    address = 'Shenyang, Liaoningsheng, hepingqu'
+    address = "Squire to the Lord Commander of the Night's Watch"
     add1 = address[0...30]
     add2 = address.length > 30 ? address[30...60] : ''
     add3 = address.length > 60 ? address[60...90] : ''
     email = 'fatpig0416@gmail.com'
     pin_code = '110001'
     city = 'The Wall'
-    state = 'Winterfell'
+    state = 'MA'
     phone = '9167783870'
 
 
@@ -209,7 +209,7 @@ class MfasRequestController < ApplicationController
         :CM_FORCITY => '',
         :CM_FORPINCODE => '',
         :CM_FORSTATE => '',
-        :CM_FORCOUNTRY => '',
+        :CM_FORCOUNTRY => '101', #India
         :CM_FORRESIPHONE => '',
         :CM_FORRESIFAX => '',
         :CM_FOROFFPHONE => '',
@@ -219,6 +219,17 @@ class MfasRequestController < ApplicationController
     mfa_service_request(flag, dict)
   end
 
+  ## fire SOAP query to get the payment url
+  # create payment
+  def mfa_service_get_payment
+    flag = "03"
+    dict = {
+        :member_id => params[:member_id],
+        :client_code => params[:client_code],
+        :logout_url => params[:logout_url]
+    }
+    mfa_service_request(flag, dict)
+  end
   ## MUTUAL FUND Additional Services Request
   def mfa_service_request(flag, dict)
 

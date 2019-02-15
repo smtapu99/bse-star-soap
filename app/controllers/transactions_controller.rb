@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class TransactionsController < ApplicationController
 
   include TransactionHelper
   ################ SOAP FUNCTIONS to get/post data - called by MAIN FUNCTIONS

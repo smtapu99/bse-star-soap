@@ -16,7 +16,7 @@ for all following- the 1st element is value for testing environment, the 2nd for
   USERID = ['', '2505901']
 
 # set on your own
-  PASSWORD = %w(Finbridge@321 Finbridge@321)
+  PASSWORD = %w(Finbridge@321 cAixi@)
 ## unique passkey that should ideally be freshly generated random string for every transaction
 ## but i have used a constant here to simplify things
   PASSKEY = %w(0123456789 9958788281)
