@@ -320,6 +320,78 @@ class MfasRequestController < ApplicationController
     }
     mfa_service_request(flag, dict)
   end
+
+  # MANDATE REGISTRATION, XSIP/ISIP Mandate: Member Type: MFI/MFD
+  def mfa_service_mandate
+    flag = MFA_FLAGS[:mandate_registration]
+    bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
+    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
+    ifsc_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+    dict = {
+        :client_code => params[:client_code],
+        :amount => params[:amount],
+        :mandate_type => params[:mandate_type].try(:upcase), #X / I /E (XSIP/ISIP/ E-Mandate)
+        :account_no => bank_acc_number,
+        :a_c_type => bank_acc_type, #A/C TYPE , SB/CB/NE/NO
+        :ifsc_code => ifsc_code,
+        :micr_code => params[:micr_code] || '',
+        :start_date => params[:start_date], #DD/MM/YY
+        :end_date => params[:end_date] #DD/MM/YYYY Default date would be current date + 100 years.
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # STP Registration via Webservices
+  def mfa_service_stp
+    flag = MFA_FLAGS[:stp_registration]
+    dict = {
+        :client_code => params[:client_code],
+        :from_scheme_code => params[:from_scheme_code],
+        :to_scheme_code => params[:to_scheme_code],
+        :buy_sell_type => params[:buy_sell_type], # Fresh/Additional
+        :trans_mode => params[:trans_mode].try(:upcase),# D/P, demat or physica
+        :folio_no => params[:folio_no],#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
+        :internal_ref_no => params[:internal_ref_no],
+        :start_date => params[:start_date], #DD/MM/YY
+        :frequency_type => params[:frequency_type].try(:upcase), #type of requency , MONTHLY/QUARTERLY/WEEKLY
+        :no_of_transfers => params[:no_of_transfers],
+        :installment_amount => params[:installment_amount],#installment amount
+        :first_order_today => params[:first_order_today].try(:upcase), #Y/N
+        :sub_br_code => params[:sub_br_code],
+        :euin_declaration => params[:euin_declaration].try(:upcase), #Y/N
+        :euin_number => params[:euin_number],
+        :remarks => params[:remarks],
+        :sub_br_arn => params[:sub_broker_arn]
+
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # WP Registration via Webservices
+  def mfa_service_swp
+    flag = MFA_FLAGS[:swp_registration]
+    dict = {
+        :client_code => params[:client_code],
+        :scheme_code => params[:scheme_code],
+        :trans_mode => params[:trans_mode].try(:upcase),# D/P, demat or physica
+        :folio_no => params[:folio_no],#Incase demat transaction this field will be blank and mandatory in case of physical redemption and purchase+additional
+        :internal_ref_no => params[:internal_ref_no],
+        :start_date => params[:start_date], #DD/MM/YY
+        :number_of_withdrawls => params[:number_of_withdrawls],
+        :frequency_type => params[:frequency_type].try(:upcase), #type of requency , MONTHLY/QUARTERLY/WEEKLY
+        :installment_amount => params[:installment_amount],#installment amount
+        :installment_units => params[:installment_units],#installment amount
+        :first_order_today => params[:first_order_today].try(:upcase), #Y/N
+        :sub_br_code => params[:sub_br_code],
+        :euin_declaration => params[:euin_declaration].try(:upcase), #Y/N
+        :euin_number => params[:euin_number],
+        :remarks => params[:remarks],
+        :sub_br_arn => params[:sub_broker_arn]
+
+    }
+    mfa_service_request(flag, dict)
+  end
+
   ## MUTUAL FUND Additional Services Request
   def mfa_service_request(flag, dict)
 

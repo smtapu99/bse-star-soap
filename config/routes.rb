@@ -27,4 +27,7 @@ Rails.application.routes.draw do
   post 'mfa_service/payment-gateway',to: 'mfas_request#mfa_service_get_payment', as: :mfa_payment_gateway
   post 'mfa_service/change-password',to: 'mfas_request#mfa_service_change_password', as: :mfa_change_password
   post 'mfa_service/ucc-mfi',to: 'mfas_request#mfa_service_ucc_mfi', as: :mfa_service_ucc_mfi
+  post 'mfa_service/mandate-registration', to: 'mfas_request#mfa_service_mandate',  as: :mfa_service_mandate
+  post 'mfa_service/stp-registration', to: 'mfas_request#mfa_service_stp',  as: :mfa_service_stp
+  post 'mfa_service/swp-registration', to: 'mfas_request#mfa_service_swp',  as: :mfa_service_swp
 end
