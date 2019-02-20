@@ -416,7 +416,7 @@ class MfasRequestController < ApplicationController
 
   # CLIENT ORDER PAYMENT STATUS
   def mfa_service_payment_status
-    flag = MFA_FLAGS[:client_order_payment_status]
+    flag = MFA_FLAGS[:mandate_status]
     dict = {
         :client_code => params[:client_code],
         :order_no => params[:order_no],
