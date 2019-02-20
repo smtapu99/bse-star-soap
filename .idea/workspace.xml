@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3dffbb5-59ed-422c-9acd-7eba071351c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/mfas_request_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-    </list>
+    <list default="true" id="f3dffbb5-59ed-422c-9acd-7eba071351c2" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -28,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="1320">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -46,19 +42,51 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="973">
-              <caret line="515" column="7" selection-start-line="515" selection-start-column="7" selection-end-line="515" selection-end-column="7" />
+            <state relative-caret-position="363">
+              <caret line="329" column="11" lean-forward="true" selection-start-line="329" selection-start-column="11" selection-end-line="329" selection-end-column="11" />
               <folding>
                 <element signature="e#82#927#0" />
+                <element signature="e#147#920#1" />
+                <element signature="e#434#565#0" />
                 <element signature="e#982#3262#0" />
-                <element signature="e#3378#6286#0" />
-                <element signature="e#6639#6911#0" />
-                <element signature="e#7610#9162#0" />
-                <element signature="e#9274#10145#0" />
-                <element signature="e#10186#11447#0" />
-                <element signature="e#11487#12704#0" />
-                <element signature="e#14015#15053#0" />
-                <element signature="e#15443#15785#0" />
+                <element signature="e#1117#1243#0" />
+                <element signature="e#1255#3220#0" />
+                <element signature="e#55#17831#1" />
+                <element signature="e#3378#6661#0" />
+                <element signature="e#4075#6619#0" />
+                <element signature="e#55#17831#1" />
+                <element signature="e#6728#6990#0" />
+                <element signature="e#6810#6948#0" />
+                <element signature="e#7014#7286#0" />
+                <element signature="e#7096#7244#0" />
+                <element signature="e#7319#9579#0" />
+                <element signature="e#7985#9537#0" />
+                <element signature="e#10561#11826#0" />
+                <element signature="e#10636#11784#0" />
+                <element signature="e#11866#13087#0" />
+                <element signature="e#11941#13045#0" />
+                <element signature="e#13128#13406#0" />
+                <element signature="e#13206#13364#0" />
+                <element signature="e#13447#13725#0" />
+                <element signature="e#13525#13683#0" />
+                <element signature="e#13761#14081#0" />
+                <element signature="e#13854#14039#0" />
+                <element signature="e#14126#14361#0" />
+                <element signature="e#14222#14319#0" />
+                <element signature="e#14390#15428#0" />
+                <element signature="e#14487#15386#0" />
+                <element signature="e#15451#15793#0" />
+                <element signature="e#15531#15751#0" />
+                <element signature="e#15861#16201#0" />
+                <element signature="e#15956#16159#0" />
+                <element signature="e#16249#17831#0" />
+                <element signature="e#16418#17825#0" />
+                <element signature="e#16725#16777#0" />
+                <element signature="e#16791#16972#0" />
+                <element signature="e#17225#17601#0" />
+                <element signature="e#17287#17394#0" />
+                <element signature="e#17479#17583#0" />
+                <element signature="e#17676#17809#0" />
               </folding>
             </state>
           </provider>
@@ -192,7 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -239,6 +266,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -427,17 +455,18 @@
       <workItem from="1550539116868" duration="4485000" />
       <workItem from="1550546854635" duration="47000" />
       <workItem from="1550624553457" duration="8190000" />
+      <workItem from="1550634955642" duration="200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43654000" />
+    <option name="totallyTimeSpent" value="43887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="957" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28002214" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19811843" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -523,6 +552,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/transactions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4818">
@@ -547,6 +583,13 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -568,35 +611,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="973">
-          <caret line="515" column="7" selection-start-line="515" selection-start-column="7" selection-end-line="515" selection-end-column="7" />
+        <state relative-caret-position="330">
+          <caret line="328" column="75" selection-start-line="328" selection-start-column="75" selection-end-line="328" selection-end-column="75" />
           <folding>
             <element signature="e#82#927#0" />
+            <element signature="e#147#920#1" />
+            <element signature="e#434#565#0" />
             <element signature="e#982#3262#0" />
-            <element signature="e#3378#6286#0" />
-            <element signature="e#6639#6911#0" />
-            <element signature="e#7610#9162#0" />
-            <element signature="e#9274#10145#0" />
-            <element signature="e#10186#11447#0" />
-            <element signature="e#11487#12704#0" />
-            <element signature="e#14015#15053#0" />
-            <element signature="e#15443#15785#0" />
+            <element signature="e#1117#1243#0" />
+            <element signature="e#1255#3220#0" />
+            <element signature="e#55#17831#1" />
+            <element signature="e#3378#6661#0" />
+            <element signature="e#4075#6619#0" />
+            <element signature="e#55#17831#1" />
+            <element signature="e#6728#6990#0" />
+            <element signature="e#6810#6948#0" />
+            <element signature="e#7014#7286#0" />
+            <element signature="e#7096#7244#0" />
+            <element signature="e#7319#9579#0" />
+            <element signature="e#7985#9537#0" />
+            <element signature="e#10561#11826#0" />
+            <element signature="e#10636#11784#0" />
+            <element signature="e#11866#13087#0" />
+            <element signature="e#11941#13045#0" />
+            <element signature="e#13128#13406#0" />
+            <element signature="e#13206#13364#0" />
+            <element signature="e#13447#13725#0" />
+            <element signature="e#13525#13683#0" />
+            <element signature="e#13761#14081#0" />
+            <element signature="e#13854#14039#0" />
+            <element signature="e#14126#14361#0" />
+            <element signature="e#14222#14319#0" />
+            <element signature="e#14390#15428#0" />
+            <element signature="e#14487#15386#0" />
+            <element signature="e#15451#15793#0" />
+            <element signature="e#15531#15751#0" />
+            <element signature="e#15861#16201#0" />
+            <element signature="e#15956#16159#0" />
+            <element signature="e#16249#17831#0" />
+            <element signature="e#16418#17825#0" />
+            <element signature="e#16725#16777#0" />
+            <element signature="e#16791#16972#0" />
+            <element signature="e#17225#17601#0" />
+            <element signature="e#17287#17394#0" />
+            <element signature="e#17479#17583#0" />
+            <element signature="e#17676#17809#0" />
           </folding>
         </state>
       </provider>

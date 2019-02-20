@@ -126,8 +126,8 @@ class MfasRequestController < ApplicationController
     tax_status = '01'
     occ_code = '01'
     bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
-    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
-    ifsc_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+    bank_acc_number = '100200324786' #Account number must be between 9 and 16 chars long
+    ifsc_code = 'HDFC0000060' #IFSC code must be in the format: HDFC0000060
 
     address = "Squire to the Lord Commander of the Night's Watch"
     add1 = address[0...30]
@@ -250,8 +250,8 @@ class MfasRequestController < ApplicationController
     tax_status = '01'
     occ_code = '01'
     bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
-    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
-    neft_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+    bank_acc_number = '100200324786' #Account number must be between 9 and 16 chars long
+    neft_code = 'HDFC0000060' #IFSC code must be in the format: HDFC0000060
 
     address = "Squire to the Lord Commander of the Night's Watch"
     add1 = address[0...30]
@@ -325,15 +325,15 @@ class MfasRequestController < ApplicationController
   def mfa_service_mandate
     flag = MFA_FLAGS[:mandate_registration]
     bank_acc_type = 'SB' # SB: Savings, CB: Current, NE: NRE, NO: NRO
-    bank_acc_number = '1234567890' #Account number must be between 9 and 16 chars long
-    ifsc_code = 'HDFC0000291' #IFSC code must be in the format: HDFC0000291
+    bank_acc_number = '100200324786' #Account number must be between 9 and 16 chars long
+    ifsc_code = 'HDFC0000060' #IFSC code must be in the format: HDFC0000060
     dict = {
         :client_code => params[:client_code],
         :amount => params[:amount],
         :mandate_type => params[:mandate_type].try(:upcase), #X / I /E (XSIP/ISIP/ E-Mandate)
-        :account_no => bank_acc_number,
-        :a_c_type => bank_acc_type, #A/C TYPE , SB/CB/NE/NO
-        :ifsc_code => ifsc_code,
+        :account_no => params[:acount_no] || bank_acc_number,
+        :a_c_type => params[:bank_account_type].try(:upcase) || bank_acc_type, #A/C TYPE , SB/CB/NE/NO
+        :ifsc_code => params[:ifsc_code] || ifsc_code,
         :micr_code => params[:micr_code] || '',
         :start_date => params[:start_date], #DD/MM/YY
         :end_date => params[:end_date] #DD/MM/YYYY Default date would be current date + 100 years.
