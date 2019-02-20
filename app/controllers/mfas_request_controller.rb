@@ -141,81 +141,81 @@ class MfasRequestController < ApplicationController
 
 
     dict = { #params that will be sent as param for user creation in bse
-        :CODE => 1,
-        :HOLDING => 'SI',
-        :TAXSTATUS => tax_status,
-        :OCCUPATIONCODE => occ_code,
-        :APPNAME1 => 'Jon',
-        :APPNAME2 => '',
-        :APPNAME3 => '',
-        :DOB => '16/04/1993',
-        :GENDER => 'M',
-        :FATHER_HUSBAND_GUARDIAN => '',
-        :PAN => pan,
-        :NOMINEE => '',
-        :NOMINEE_RELATION => '',
-        :GUARDIANPAN => '',
-        :TYPE => 'P',
-        :DEFAULTDP => '',
-        :CDSLDPID => '',
-        :CDSLCLTID => '',
-        :NSDLDPID => '',
-        :NSDLCLTID => '',
-        :ACCTYPE_1 => bank_acc_type,
-        :ACCNO_1 => bank_acc_number,
-        :MICRNO_1 => '',
-        :NEFT_IFSCCODE_1 => ifsc_code,
-        :DEFAULT_BANK_FLAG_1 => 'Y',
-        :ACCTYPE_2 => '',
-        :ACCNO_2 => '',
-        :MICRNO_2 => '',
-        :NEFT_IFSCCODE_2 => '',
-        :DEFAULT_BANK_FLAG_2 => '',
-        :ACCTYPE_3 => '',
-        :ACCNO_3 => '',
-        :MICRNO_3 => '',
-        :NEFT_IFSCCODE_3 => '',
-        :DEFAULT_BANK_FLAG_3 => '',
-        :ACCTYPE_4 => '',
-        :ACCNO_4 => '',
-        :MICRNO_4 => '',
-        :NEFT_IFSCCODE_4 => '',
-        :DEFAULT_BANK_FLAG_4 => '',
-        :ACCTYPE_5 => '',
-        :ACCNO_5 => '',
-        :MICRNO_5 => '',
-        :NEFT_IFSCCODE_5 => '',
-        :DEFAULT_BANK_FLAG_5 => '',
-        :CHEQUENAME => '',
-        :ADD1 => add1,
-        :ADD2 => add2,
-        :ADD3 => add3,
-        :CITY => city,
-        :STATE => state,
-        :PINCODE => pin_code,
-        :COUNTRY => 'India',
-        :RESIPHONE => '',
-        :RESIFAX => '',
-        :OFFICEPHONE => '',
-        :OFFICEFAX => '',
-        :EMAIL => email,
-        :COMMMODE => 'M',
-        :DIVPAYMODE => '02',
-        :PAN2 => '',
-        :PAN3 => '',
-        :MAPINNO => '',
-        :CM_FORADD1 => '',
-        :CM_FORADD2 => '',
-        :CM_FORADD3 => '',
-        :CM_FORCITY => '',
-        :CM_FORPINCODE => '',
-        :CM_FORSTATE => '',
-        :CM_FORCOUNTRY => '101', #India
-        :CM_FORRESIPHONE => '',
-        :CM_FORRESIFAX => '',
-        :CM_FOROFFPHONE => '',
-        :CM_FOROFFFAX => '',
-        :CM_MOBILE => phone,
+             :CODE => 1,
+             :HOLDING => 'SI',
+             :TAXSTATUS => tax_status,
+             :OCCUPATIONCODE => occ_code,
+             :APPNAME1 => 'Jon',
+             :APPNAME2 => '',
+             :APPNAME3 => '',
+             :DOB => '16/04/1993',
+             :GENDER => 'M',
+             :FATHER_HUSBAND_GUARDIAN => '',
+             :PAN => pan,
+             :NOMINEE => '',
+             :NOMINEE_RELATION => '',
+             :GUARDIANPAN => '',
+             :TYPE => 'P',
+             :DEFAULTDP => '',
+             :CDSLDPID => '',
+             :CDSLCLTID => '',
+             :NSDLDPID => '',
+             :NSDLCLTID => '',
+             :ACCTYPE_1 => bank_acc_type,
+             :ACCNO_1 => bank_acc_number,
+             :MICRNO_1 => '',
+             :NEFT_IFSCCODE_1 => ifsc_code,
+             :DEFAULT_BANK_FLAG_1 => 'Y',
+             :ACCTYPE_2 => '',
+             :ACCNO_2 => '',
+             :MICRNO_2 => '',
+             :NEFT_IFSCCODE_2 => '',
+             :DEFAULT_BANK_FLAG_2 => '',
+             :ACCTYPE_3 => '',
+             :ACCNO_3 => '',
+             :MICRNO_3 => '',
+             :NEFT_IFSCCODE_3 => '',
+             :DEFAULT_BANK_FLAG_3 => '',
+             :ACCTYPE_4 => '',
+             :ACCNO_4 => '',
+             :MICRNO_4 => '',
+             :NEFT_IFSCCODE_4 => '',
+             :DEFAULT_BANK_FLAG_4 => '',
+             :ACCTYPE_5 => '',
+             :ACCNO_5 => '',
+             :MICRNO_5 => '',
+             :NEFT_IFSCCODE_5 => '',
+             :DEFAULT_BANK_FLAG_5 => '',
+             :CHEQUENAME => '',
+             :ADD1 => add1,
+             :ADD2 => add2,
+             :ADD3 => add3,
+             :CITY => city,
+             :STATE => state,
+             :PINCODE => pin_code,
+             :COUNTRY => 'India',
+             :RESIPHONE => '',
+             :RESIFAX => '',
+             :OFFICEPHONE => '',
+             :OFFICEFAX => '',
+             :EMAIL => email,
+             :COMMMODE => 'M',
+             :DIVPAYMODE => '02',
+             :PAN2 => '',
+             :PAN3 => '',
+             :MAPINNO => '',
+             :CM_FORADD1 => '',
+             :CM_FORADD2 => '',
+             :CM_FORADD3 => '',
+             :CM_FORCITY => '',
+             :CM_FORPINCODE => '',
+             :CM_FORSTATE => '',
+             :CM_FORCOUNTRY => '101', #India
+             :CM_FORRESIPHONE => '',
+             :CM_FORRESIFAX => '',
+             :CM_FOROFFPHONE => '',
+             :CM_FOROFFFAX => '',
+             :CM_MOBILE => phone,
     }
     mfa_service_request(flag, dict)
   end
@@ -342,7 +342,7 @@ class MfasRequestController < ApplicationController
   end
 
   # STP Registration via Webservices
-  def mfa_service_stp
+  def mfa_service_stp_reg
     flag = MFA_FLAGS[:stp_registration]
     dict = {
         :client_code => params[:client_code],
@@ -368,7 +368,7 @@ class MfasRequestController < ApplicationController
   end
 
   # WP Registration via Webservices
-  def mfa_service_swp
+  def mfa_service_swp_reg
     flag = MFA_FLAGS[:swp_registration]
     dict = {
         :client_code => params[:client_code],
@@ -392,54 +392,144 @@ class MfasRequestController < ApplicationController
     mfa_service_request(flag, dict)
   end
 
+  # STP Cancellation via Webservices
+  def mfa_service_stp_cancel
+    flag = MFA_FLAGS[:stp_cancellation]
+    dict = {
+        :stp_registration_no => params[:stp_registration_no],
+        :client_code => params[:client_code],
+        :remarks => params[:remarks] || ''
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # STP Cancellation via Webservices
+  def mfa_service_swp_cancel
+    flag = MFA_FLAGS[:swp_cancellation]
+    dict = {
+        :swp_registration_no => params[:swp_registration_no],
+        :client_code => params[:client_code],
+        :remarks => params[:remarks] || ''
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # CLIENT ORDER PAYMENT STATUS
+  def mfa_service_payment_status
+    flag = MFA_FLAGS[:client_order_payment_status]
+    dict = {
+        :client_code => params[:client_code],
+        :order_no => params[:order_no],
+        :segment => 'BSEMF' # BSEMF- when MF Order is placed, SGB- when SGB order is placed
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # CLIENT REDEMPTION SMS AUTHENTICATION
+  def mfa_service_sms_auth
+    flag = MFA_FLAGS[:client_redemption_sms_authentication]
+    dict = {
+        :member_code => params[:member_id],
+        :client_code => params[:client_code],
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # CKYC via Webservices
+  def mfa_service_ckyc_upload
+    flag = MFA_FLAGS[:ckyc_upload]
+    pan = 'NIGHT1996W'
+    dict = {
+        :client_code => params[:client_code],
+        :pan => params[:client_pan] || pan, #Mandatory if Tax Status is not 02 (Should Match with Existing PAN Given for Client Code)
+        :holder_ckyc_number_1 => params[:holder_ckyc_number_1],
+        :holder_ckyc_number_2 => params[:holder_ckyc_number_2],
+        :holder_ckyc_number_3 => params[:holder_ckyc_number_3],
+        :guardian_ckyc_number => params[:guardian_ckyc_number],
+        :joint_holder_1_dob => params[:joint_holder_1_dob],
+        :joint_holder_2_dob => params[:joint_holder_2_dob],
+        :guardian_ckyc_dob => params[:guardian_ckyc_dob],
+        :kyc_type_1_holder => params[:kyc_type_1_holder], #(K/C) (K - KRA Compliant C- CKYC Compliant)
+        :kyc_type_2_holder => params[:kyc_type_2_holder],
+        :kyc_type_3_holder => params[:kyc_type_3_holder],
+        :kyc_type_guardian => params[:kyc_type_guardian],
+
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # MANDATE STATUS
+  def mfa_service_mandate_status
+    flag = MFA_FLAGS[:mandate_status]
+    dict = {
+        :from_date => params[:from_date],
+        :to_date => params[:to_date],
+        :member_code => params[:member_id],
+        :client_code => params[:client_code],
+        :mandate_id => params[:mandate_id]
+    }
+    mfa_service_request(flag, dict)
+  end
+
+  # SYSTEMATIC PLAN AUTHENTICATION (Registration/ Cancellation)
+  def mfa_service_sys_plan_auth
+    flag = MFA_FLAGS[:systematic_plan_authentication]
+    dict = {
+        :action => params[:plan_action].try(:upcase), #NEW/CXL
+        :member_code => params[:member_id],
+        :client_code => params[:client_code],
+        :logout_url => params[:logout_url]
+    }
+    mfa_service_request(flag, dict)
+  end
   ## MUTUAL FUND Additional Services Request
   def mfa_service_request(flag, dict)
 
     encrypted_password_response = mfa_get_password(params[:user_id], params[:member_id], params[:password], params[:pass_key])
 
     if encrypted_password_response[0].to_i == 100
-        soap_header = generate_header(METHOD_UPLOAD_URL[LIVE] + 'MFAPI', SVC_UPLOAD_URL[LIVE])
+      soap_header = generate_header(METHOD_UPLOAD_URL[LIVE] + 'MFAPI', SVC_UPLOAD_URL[LIVE])
 
-        # create a client for the service
-        client = get_soap_client(WSDL_UPLOAD_URL[LIVE], soap_header, get_mfapi_namespaces)
+      # create a client for the service
+      client = get_soap_client(WSDL_UPLOAD_URL[LIVE], soap_header, get_mfapi_namespaces)
 
-        mfa_param = []
-        dict.each do |key, value|
-          mfa_param << value
-        end
-        data = {
-            "Flag" => flag,
-            "UserId" => params[:user_id],
-            "EncryptedPassword" => encrypted_password_response[1],
-            "param" => mfa_param.join("|")
-        }
+      mfa_param = []
+      dict.each do |key, value|
+        mfa_param << value
+      end
+      data = {
+          "Flag" => flag,
+          "UserId" => params[:user_id],
+          "EncryptedPassword" => encrypted_password_response[1],
+          "param" => mfa_param.join("|")
+      }
 
-        response = call_soap_client(client, 'mfapi', data)
-        hash = response.hash
-        result_string = hash['envelope']['body']['mfapi_response']['mfapi_result']
-        result = result_string.split('|')
-        # Respond converted json response
-        if result.first.to_i == 100
-          render status: 200, json: {
-              status: "success",
-              code: result.first,
-              message: result.last
-          }.to_json
-        else
-          # raise result_message
-          render status: 200, json: {
-              status: "fail",
-              code: result.first,
-              message: result.last
-          }.to_json
-        end
+      response = call_soap_client(client, 'mfapi', data)
+      hash = response.hash
+      result_string = hash['envelope']['body']['mfapi_response']['mfapi_result']
+      result = result_string.split('|')
+      # Respond converted json response
+      if result.first.to_i == 100
+        render status: 200, json: {
+            status: "success",
+            code: result.first,
+            message: result.last
+        }.to_json
       else
-        # raise get password error
+        # raise result_message
         render status: 200, json: {
             status: "fail",
-            code: encrypted_password_response[0],
-            message: encrypted_password_response[1]
+            code: result.first,
+            message: result.last
         }.to_json
       end
+    else
+      # raise get password error
+      render status: 200, json: {
+          status: "fail",
+          code: encrypted_password_response[0],
+          message: encrypted_password_response[1]
+      }.to_json
+    end
   end
 end

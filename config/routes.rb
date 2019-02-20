@@ -28,6 +28,13 @@ Rails.application.routes.draw do
   post 'mfa_service/change-password',to: 'mfas_request#mfa_service_change_password', as: :mfa_change_password
   post 'mfa_service/ucc-mfi',to: 'mfas_request#mfa_service_ucc_mfi', as: :mfa_service_ucc_mfi
   post 'mfa_service/mandate-registration', to: 'mfas_request#mfa_service_mandate',  as: :mfa_service_mandate
-  post 'mfa_service/stp-registration', to: 'mfas_request#mfa_service_stp',  as: :mfa_service_stp
-  post 'mfa_service/swp-registration', to: 'mfas_request#mfa_service_swp',  as: :mfa_service_swp
+  post 'mfa_service/stp-registration', to: 'mfas_request#mfa_service_stp_reg',  as: :mfa_service_stp_reg
+  post 'mfa_service/swp-registration', to: 'mfas_request#mfa_service_swp_reg',  as: :mfa_service_swp_reg
+  post 'mfa_service/stp-cancellation', to: 'mfas_request#mfa_service_stp_cancel',  as: :mfa_service_stp_cancel
+  post 'mfa_service/swp-cancellation', to: 'mfas_request#mfa_service_swp_cancel',  as: :mfa_service_swp_cancel
+  post 'mfa_service/payment-status', to: 'mfas_request#mfa_service_payment_status',  as: :mfa_payment_staus
+  post 'mfa_service/sms-auth', to: 'mfas_request#mfa_service_sms_auth',  as: :mfa_sms_auth
+  post 'mfa_service/ckyc-upload', to: 'mfas_request#mfa_service_ckyc_upload',  as: :mfa_ckyc_upload
+  post 'mfa_service/mandate-status', to: 'mfas_request#mfa_service_mandate_status',  as: :mfa_mandate_status
+  post 'mfa_service/sys-plan-auth', to: 'mfas_request#mfa_service_sys_plan_auth',  as: :mfa_sys_plan_auth
 end

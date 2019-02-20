@@ -20,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/soap_api@Development__soap_api.rcov" NAME="Development: soap_api Coverage Results" MODIFIED="1550540118850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="soap_api" />
+    <SUITE FILE_PATH="coverage/soap_api@Development__soap_api.rcov" NAME="Development: soap_api Coverage Results" MODIFIED="1550633747175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="soap_api" />
     <SUITE FILE_PATH="coverage/soap_api@routes.rcov" NAME="routes Coverage Results" MODIFIED="1549934733113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" MODULE_NAME="soap_api" />
   </component>
   <component name="FileEditorManager">
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="31" column="96" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
+            <state relative-caret-position="563">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/transactions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="146" column="78" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="78" />
+            <state relative-caret-position="4818">
+              <caret line="146" column="78" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -46,14 +46,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="374" column="43" selection-start-line="374" selection-start-column="43" selection-end-line="374" selection-end-column="43" />
+            <state relative-caret-position="973">
+              <caret line="515" column="7" selection-start-line="515" selection-start-column="7" selection-end-line="515" selection-end-column="7" />
               <folding>
-                <element signature="e#6353#6615#0" />
-                <element signature="e#6944#9204#0" />
+                <element signature="e#82#927#0" />
+                <element signature="e#982#3262#0" />
+                <element signature="e#3378#6286#0" />
+                <element signature="e#6639#6911#0" />
                 <element signature="e#7610#9162#0" />
-                <element signature="e#9239#11499#0" />
-                <element signature="e#9252#10914#0" />
+                <element signature="e#9274#10145#0" />
+                <element signature="e#10186#11447#0" />
+                <element signature="e#11487#12704#0" />
+                <element signature="e#14015#15053#0" />
+                <element signature="e#15443#15785#0" />
               </folding>
             </state>
           </provider>
@@ -62,7 +67,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190118013805_create_sip_orders.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="330">
               <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
             </state>
           </provider>
@@ -71,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/schema.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="4983">
               <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
             </state>
           </provider>
@@ -85,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="528">
+              <caret line="16" column="37" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -141,6 +146,7 @@
       <find>frequency_type</find>
       <find>no_of</find>
       <find>installment_amount</find>
+      <find>installment_</find>
     </findStrings>
     <replaceStrings>
       <replace>:</replace>
@@ -187,6 +193,7 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,7 +239,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,18 +424,20 @@
       <workItem from="1550167375474" duration="1119000" />
       <workItem from="1550193532469" duration="11372000" />
       <workItem from="1550217451914" duration="20000" />
-      <workItem from="1550539116868" duration="3323000" />
+      <workItem from="1550539116868" duration="4485000" />
+      <workItem from="1550546854635" duration="47000" />
+      <workItem from="1550624553457" duration="8190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34255000" />
+    <option name="totallyTimeSpent" value="43654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="957" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2733813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28002214" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -442,7 +450,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.58116484" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.57992566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32880098" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -515,6 +523,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/transactions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4818">
+          <caret line="146" column="78" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190118013805_create_sip_orders.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4983">
+          <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -539,51 +568,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="31" column="96" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20190118013805_create_sip_orders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/transactions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="146" column="78" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/mfa_service_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="528">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/mfas_request_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="374" column="43" selection-start-line="374" selection-start-column="43" selection-end-line="374" selection-end-column="43" />
+        <state relative-caret-position="973">
+          <caret line="515" column="7" selection-start-line="515" selection-start-column="7" selection-end-line="515" selection-end-column="7" />
           <folding>
-            <element signature="e#6353#6615#0" />
-            <element signature="e#6944#9204#0" />
+            <element signature="e#82#927#0" />
+            <element signature="e#982#3262#0" />
+            <element signature="e#3378#6286#0" />
+            <element signature="e#6639#6911#0" />
             <element signature="e#7610#9162#0" />
-            <element signature="e#9239#11499#0" />
-            <element signature="e#9252#10914#0" />
+            <element signature="e#9274#10145#0" />
+            <element signature="e#10186#11447#0" />
+            <element signature="e#11487#12704#0" />
+            <element signature="e#14015#15053#0" />
+            <element signature="e#15443#15785#0" />
           </folding>
         </state>
       </provider>
