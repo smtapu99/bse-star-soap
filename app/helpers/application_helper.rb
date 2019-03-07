@@ -11,26 +11,42 @@ module ApplicationHelper
     svc_url = to
 
     {
-        "csk:Action" => method_url,
+        # "csk:Action" => method_url,
         "csk:To" => svc_url,
+        "csk:Action" => method_url,
         attributes!: {
             "csk:Action" => {"xmlns:csk" => "http://www.w3.org/2005/08/addressing"},
-            "csk:To" => {"xmlns:csk" => "http://www.w3.org/2005/08/addressing"}}
+            "csk:To" => {"xmlns:csk" => "http://www.w3.org/2005/08/addressing"}
+        }
     }
   end
 
   def get_order_entry_namespaces
-    {
-        "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
-        "xmlns:bse" => "http://bsestarmf.in/",
-    }
+    namespaces = [
+        {
+            "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+            "xmlns:bse" => "http://bsestarmf.in/"
+        },
+        {
+            "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+            "xmlns:bse" => "http://bsestarmf.in/"
+        }
+    ]
+    namespaces[LIVE]
   end
 
   def get_mfapi_namespaces
-    {
-        "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
-        "xmlns:bse" => "http://www.bsestarmf.in/2016/01/",
-    }
+    namespaces = [
+        {
+            "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+            "xmlns:bse" => "http://bsestarmfdemo.bseindia.com/2016/01/",
+        },
+        {
+            "xmlns:soap" =>  "http://www.w3.org/2003/05/soap-envelope",
+            "xmlns:bse" => "http://www.bsestarmf.in/2016/01/"
+        }
+    ]
+    namespaces[LIVE]
   end
 
   def get_soap_client(wsdl, soap_header, namespaces)

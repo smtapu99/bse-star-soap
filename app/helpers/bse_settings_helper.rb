@@ -30,12 +30,10 @@ may change from time to time, so confirm with BSEStar
 # url for BSEStar order entry webservice which is used to create or cancel transactions
   WSDL_ORDER_URL = %w(http://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc?singleWsdl http://www.bsestarmf.in/MFOrderEntry/MFOrder.svc?singleWsdl)
   SVC_ORDER_URL  = %w(http://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc http://www.bsestarmf.in/MFOrderEntry/MFOrder.svc)
-  METHOD_ORDER_URL = %w(http://bsestarmfdemo.bseindia.com/MFOrderEntry/ http://bsestarmf.in/MFOrderEntry/)
+  METHOD_ORDER_URL = %w(http://bsestarmf.in/MFOrderEntry/ http://bsestarmf.in/MFOrderEntry/)
 # url for BSEStar upload webservice which is used to do everything besides creating/cancelling
 # transactions like create user (transactions on bse can only be placed after this) etc
   WSDL_UPLOAD_URL = %w(http://bsestarmfdemo.bseindia.com/MFUploadService/MFUploadService.svc?singleWsdl http://www.bsestarmf.in/StarMFWebService/StarMFWebService.svc?singleWsdl)
   SVC_UPLOAD_URL  = %w(http://bsestarmfdemo.bseindia.com/MFUploadService/MFUploadService.svc/Basic http://www.bsestarmf.in/StarMFWebService/StarMFWebService.svc/Basic)
-  # SVC_UPLOAD_URL  = %w(http://bsestarmfdemo.bseindia.com/MFUploadService/MFUploadService.svc/Basic http://www.bsestarmf.in/MFUploadService/MFUploadService.svc/Basic)
   METHOD_UPLOAD_URL = %w(http://bsestarmfdemo.bseindia.com/2016/01/IMFUploadService/ http://www.bsestarmf.in/2016/01/IStarMFWebService/)
-  # METHOD_UPLOAD_URL = %w(http://bsestarmfdemo.bseindia.com/2016/01/MFUploadService/ http://www.bsestarmf.in/MFUploadService/)
 end
